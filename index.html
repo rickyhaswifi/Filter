@@ -17,15 +17,15 @@
   </ul>
   <p>Data comes in from <a href="https://docs.google.com/spreadsheets/d/1PQJSCErV-r-yxTuYxYzMfWLX3ncboRJpLNU_aWatF-4/edit#gid=0" style="color: blue;">Google Sheet</a>
   </p>
-  <h2>Mentor Type</h2>
-  <select name="" id="" onchange="filterFunctionOne()">
-    <option value="filter1">filter1</option>
-    <option value="filter2">filter2</option>
-    <option value="filter3">filter3</option>
+  <h2>Role Type</h2>
+  <select name="Select-Menu-Role" id="Select-Menu-Role" >
+    <option value="Advisor">Advisor</option>
+    <option value="Mentor">Mentor</option>
+    <option value="Sponsor">Sponsor</option>
   </select>
   
   <h2>Location</h2>
-  <select id="mySelect">
+  <select name="Select-Menu-Location" id="Select-Menu-Location">
     <option value="Los Angeles">Los Angeles</option>
     <option value="Boston">Boston</option>
     <option value="Boise">Boise</option>
@@ -34,19 +34,26 @@
 
   <h2>Search</h2>
   <input id="search" class="search" type="text" />
-  
+  <button class="sort" data-sort="name">
+    Sort by name
+  </button>
+
   <div style="margin-bottom: 40px;"></div>
+  
+  <div id="LocationOutput"></div>
+  
+  <div id="searchOutput"></div>
+
   <div class="people-api">
   </div>
 
-  <div id="searchOutput"></div>
+
   
   <div class="loading">
   </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="https://allurewebsolutions.com/allure.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
   <script src="./main.js"></script>
 </body>
 </html>

@@ -1,8 +1,7 @@
-// function myFunction() {
-//   var locationValue = document.getElementById("mySelect").value;
-//   // console.log(locationValue);
-// }
-
+// var locationValue = document.getElementById("Select-Menu-Location")
+// locationValue.addEventListener('change', function() {
+//   document.getElementById("LocationOutput").innerHTML = locationValue.value;
+// })
 
 // const search = document.getElementById('search')
 // search.addEventListener('input', () => searchList(search.value))
@@ -27,25 +26,46 @@ $.getJSON(url, function(data, locationValue) {
 // }
 
   // build table headings
-  html += '<div class="card--container">';
+
+  html += '<div class="card--container test-list">';
 
   var entry = data.feed.entry;
-  // console.log(entry)
-  // var locationValue = document.getElementById("mySelect");
-  // locationValue.addEventListener('change', function myFunction() {
-  //   // console.log(locationValue.value);
+
+  var locationValue = document.getElementById("Select-Menu-Location")
+  locationValue.addEventListener('change', function() {
+    document.getElementById("LocationOutput").innerHTML = locationValue.value;
+    locationFiltered = entry.filter( function(person) {
+      return (person.gsx$location.$t === locationValue.value)
+      
+    })
+    for (var i = 0; i < locationFiltered.length; i++) {
+      html += `
+      <div class="card-item">
+        <img src="${locationFiltered[i]['gsx$img']['$t']}"/>
+        <h4>${locationFiltered[i]['gsx$name']['$t']}</h4>
+        <h4>Location: ${locationFiltered[i]['gsx$location']['$t']}</h4>
+        <h4>Role: ${locationFiltered[i]['gsx$role']['$t']}</h4>
+      </div>
+      `;
+    }
+    html += '</div>';
+  })
   // })
   // Location Filter
-  // var locationValue = document.getElementById("mySelect");
-  // locationValue.addEventListener('change', function myFunction() {
-  //   locationFiltered = entry.filter( function(person) {
-  //     return (person.gsx$location.$t === locationValue.value)
-  //   })
-  //   console.log(locationValue.value);
-  // })
-  // // console.log(locationFiltered)
+ 
+  for (var i = 0; i < entry.length; i++) {
+    html += `
+    <div class="card-item">
+      <img src="${entry[i]['gsx$img']['$t']}"/>
+      <h4>${entry[i]['gsx$name']['$t']}</h4>
+      <h4>Location: ${entry[i]['gsx$location']['$t']}</h4>
+      <h4>Role: ${entry[i]['gsx$role']['$t']}</h4>
+    </div>
+    `;
+  }
+  html += '</div>';
   
-  // // Display
+  // Display
   // for (var i = 0; i < locationFiltered.length; i++) {
   //   html += `
   //   <div class="card-item">
@@ -84,22 +104,22 @@ $.getJSON(url, function(data, locationValue) {
     // html += '</div>';
     // }
   
-    for (var i = 0; i < entry.length; i++) {
-      var locationValue = document.getElementById("mySelect").value;
-      // const locationValues = document.getElementById("mySelect").value;
-      console.log(
-        (entry[i]['gsx$location']['$t'] === locationValue) ? null : locationValue
-      )
-    html += `
-    <div class="card-item sort">
-      <img src="${entry[i]['gsx$img']['$t']}"/>
-      <h4>${entry[i]['gsx$firstname']['$t']}</h4>
-      <h4>Location: ${entry[i]['gsx$location']['$t']}</h4>
-      <h4>Role: ${entry[i]['gsx$type']['$t']}</h4>
-    </div>
-    `;
-  }
-  html += '</div>';
+    // for (var i = 0; i < entry.length; i++) {
+      // var locationValue = document.getElementById("mySelect").value;
+      // // const locationValues = document.getElementById("mySelect").value;
+      // console.log(
+      //   (entry[i]['gsx$location']['$t'] === locationValue) ? null : locationValue
+      // )
+    // html += `
+    // <div class="card-item sort">
+    //   <img src="${entry[i]['gsx$img']['$t']}"/>
+    //   <h4 class="name">${entry[i]['gsx$firstname']['$t']}</h4>
+    //   <h4 class="location">Location: ${entry[i]['gsx$location']['$t']}</h4>
+    //   <h4>Role: ${entry[i]['gsx$type']['$t']}</h4>
+    // </div>
+    // `;
+  // }
+  // html += '</div>';
 
   // output html
   $('.people-api').html(html);
