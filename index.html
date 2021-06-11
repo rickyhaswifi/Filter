@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <ul>
+    <li>Should be able to filter by 2 types of dropdowns</li>
+    <li>Should be able to search</li>
+    <li>Should be able to clear searches</li>
+    <li>Nice to have is filters to accept URL parameters</li>
+  </ul>
+  <p>Data comes in from <a href="https://docs.google.com/spreadsheets/d/1PQJSCErV-r-yxTuYxYzMfWLX3ncboRJpLNU_aWatF-4/edit#gid=0" style="color: blue;">Google Sheet</a>
+  </p>
+  <h2>Mentor Type</h2>
+  <select name="" id="" onchange="filterFunctionOne()">
+    <option value="filter1">filter1</option>
+    <option value="filter2">filter2</option>
+    <option value="filter3">filter3</option>
+  </select>
+  
+  <h2>Location</h2>
+  <select id="mySelect">
+    <option value="Los Angeles">Los Angeles</option>
+    <option value="Boston">Boston</option>
+    <option value="Boise">Boise</option>
+    <option value="Las Vegas">Las Vegas</option>
+  </select>
+
+  <h2>Search</h2>
+  <input id="search" class="search" type="text" />
+  
+  <div style="margin-bottom: 40px;"></div>
+  <div class="people-api">
+  </div>
+
+  <div id="searchOutput"></div>
+  
+  <div class="loading">
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://allurewebsolutions.com/allure.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
