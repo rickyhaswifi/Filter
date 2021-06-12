@@ -1,59 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
-  <title>Document</title>
-</head>
-<body>
+<!-- <select id="mySelect" onchange="myFunction()">
+  <option value="Los Angeles">Los Angeles</option>
+  <option value="Boston">Boston</option>
+  <option value="Boise">Boise</option>
+  <option value="Las Vegas">Las Vegas</option>
+</select> -->
 
-  <ul>
-    <li>Should be able to filter by 2 types of dropdowns</li>
-    <li>Should be able to search</li>
-    <li>Should be able to clear searches</li>
-    <li>Nice to have is filters to accept URL parameters</li>
-  </ul>
-  <p>Data comes in from <a href="https://docs.google.com/spreadsheets/d/1PQJSCErV-r-yxTuYxYzMfWLX3ncboRJpLNU_aWatF-4/edit#gid=0" style="color: blue;">Google Sheet</a>
-  </p>
-  <h2>Role Type</h2>
-  <select name="Select-Menu-Role" id="Select-Menu-Role" >
-    <option value="Advisor">Advisor</option>
-    <option value="Mentor">Mentor</option>
-    <option value="Sponsor">Sponsor</option>
-  </select>
-  
-  <h2>Location</h2>
-  <select name="Select-Menu-Location" id="Select-Menu-Location">
-    <option value="Los Angeles">Los Angeles</option>
-    <option value="Boston">Boston</option>
-    <option value="Boise">Boise</option>
-    <option value="Las Vegas">Las Vegas</option>
-  </select>
+<div id="Select-Menu-Location"></div>
+<div id="Select-Menu-Role"></div>
 
-  <h2>Search</h2>
-  <input id="search" class="search" type="text" />
-  <button class="sort" data-sort="name">
-    Sort by name
-  </button>
+<!-- <h2>Search Name</h2>
+<input type="text" placeholder="George Michael">
+ -->
+<div class="people-api">
+</div>
 
-  <div style="margin-bottom: 40px;"></div>
-  
-  <div id="LocationOutput"></div>
-  
-  <div id="searchOutput"></div>
-
-  <div class="people-api">
-  </div>
-
-
-  
-  <div class="loading">
-  </div>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <script src="https://allurewebsolutions.com/allure.js"></script>
-  <script src="./main.js"></script>
-</body>
-</html>
+<div class="loading">
+</div>
